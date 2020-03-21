@@ -1,0 +1,163 @@
+.tile {
+  display: inline-flex;
+}
+
+.rock {
+  background-image: url("../../data/tiles/rock.png");
+  background-color: goldenrod;
+}
+.grass {
+  background-color: goldenrod;
+}
+.tree {
+  background-image: url("../../data/tiles/palmtree.png");
+  background-color: goldenrod;
+}
+.tree1 {
+  background-image: url("../../data/tiles/palmtree1.png");
+  background-color: goldenrod;
+}
+.chest {
+  background-image: url("../../data/tiles/chest.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.chest1 {
+  background-image: url("../../data/tiles/chest.png");
+  background-size: 100%;
+  background-color: goldenrod;
+  animation: glowing 1s ease-in-out;
+}
+.quicksand {
+  background-image: url("../../data/tiles/quicksand.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.brick {
+  background-image: url("../../data/tiles/brick.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.snorkle {
+  background-image: url("../../data/tiles/snorkle.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.rope {
+  background-image: url("../../data/tiles/rope.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.pick {
+  background-image: url("../../data/tiles/pick.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.rock1 {
+  background-image: url("../../data/tiles/rock1.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.brick1 {
+  background-image: url("../../data/tiles/brick1.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.noEntry {
+  background-image: url("../../data/tiles/noEntry.png");
+  background-size: 100%;
+  background-color: goldenrod;
+}
+.inventory {
+  border: solid black 1px;
+  padding: 20px;
+  color: black;
+  font-size: 20px;
+}
+@keyframes glowing {
+  from {
+    background-color: goldenrod;
+  }
+  to {
+    background-color: #ff3c00;
+  }
+  0% {
+    box-shadow: 0 0 -10px #ff3c00;
+  }
+  40% {
+    box-shadow: 0 0 30px #ff3c00;
+  }
+  60% {
+    box-shadow: 0 0 30px #ff3c00;
+  }
+  100% {
+    box-shadow: 0 0 -10px #ff3c00;
+  }
+}
+
+.key {
+  background-image: url("../../data/tiles/key.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-color: goldenrod;
+}
+.axe {
+  background-image: url("../../data/tiles/axe.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-color: goldenrod;
+}
+.trophy {
+  background-image: url("../../data/tiles/trophy.png");
+  background-size: 40px;
+  background-repeat: no-repeat;
+  background-color: goldenrod;
+}
+.toxic {
+  background-image: url("../../data/tiles/toxic.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-color: goldenrod;
+}
+.drink {
+  background-image: url("../../data/tiles/drink.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-color: goldenrod;
+}
+div {
+  font-size: 0%;
+}
+p {
+  font-size: 30px;
+  color: RED;
+}
+.keyIn {
+  padding-left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.pickIn {
+  padding-left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.snorkleIn {
+  padding-left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.axeIn {
+  padding-left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.ropeIn {
+  padding-left: 20px;
+  width: 20px;
+  height: 20px;
+}
+.hidden {
+  height: 0px;
+  width: 0px;
+}
