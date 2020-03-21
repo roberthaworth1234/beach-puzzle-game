@@ -64,7 +64,7 @@ function Map(props) {
         ))}
       </div>
       <div className="inventory">
-        Backpack
+        Inventory
         <img
           className={props.tiles[11][8] === 11 ? "keyIn" : "hidden"}
           alt="key png"

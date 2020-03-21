@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+2&display=swap');
+
 .tile {
   display: inline-flex;
 }
@@ -67,9 +69,10 @@
   background-image: url("../../data/tiles/noEntry.png");
   background-size: 100%;
   background-color: goldenrod;
+  
 }
 .inventory {
-  border: solid black 1px;
+  border: solid grey 3px;
   padding: 20px;
   color: black;
   font-size: 20px;
@@ -126,9 +129,11 @@
   background-color: goldenrod;
 }
 div {
+  font-family: "Baloo 2", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 0%;
 }
 p {
+  font-family: "Baloo 2", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 30px;
   color: RED;
 }
