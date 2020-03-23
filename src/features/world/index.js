@@ -1,6 +1,7 @@
 import React from "react";
 import Player from "../player/index";
 import Map from "../map/index";
+import Enemy from '../enemy/index'
 import { tiles } from "../../data/maps/1";
 import store from "../../config/store";
 
@@ -22,6 +23,7 @@ export default function World() {
     >
       <Map tiles={tiles} />
       <Player />
+      <Enemy />
     </div>
   );
 }

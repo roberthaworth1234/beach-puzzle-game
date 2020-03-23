@@ -209,13 +209,43 @@ function directionMove(direction, newPos) {
   });
 }
 
+function killGame(newPos, enemyPos, oldPos) {
+  
+ const tiles = store.getState().map.tiles;
+ const y = oldPos[1] / SPRITE_SIZE;
+ const x = oldPos[0] / SPRITE_SIZE;
+//  const nextTile = tiles[y][x];
+  const deathTiles = tiles.map((row, i) => {
+    if (i === y || i === y + 1 || i === y - 1) {
+      row.splice(x - 1, 3, 0, 0, 0);
+      return row;
+    } else return row;
+  });
+  store.dispatch({
+    type: "ADD_TILES",
+    payload: {
+      tiles: deathTiles
+    }
+  });
+}
+
+function checkEnemyContact(newPos, oldPos) {
+const enemyPos = store.getState().enemy.position
+if(newPos[0] === enemyPos[0] && newPos[1] === enemyPos[1]) {
+  killGame(newPos, enemyPos, oldPos)
+}
+}
+
 function attemptMove(direction) {
   const oldPos = store.getState().player.position;
   const newPos = getNewPosition(oldPos, direction);
+  checkEnemyContact(newPos, oldPos)
   if (observedBoundaries(oldPos, newPos) && observeBlock(oldPos, newPos)) {
     directionMove(direction, newPos);
   }
 }
+
+
 
 export default function handleMovement(player) {
   function handleKeydown(e) {

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { SPRITE_SIZE } from "../../features/constants/constants";
 import "./styles.css";
+// import player from "../player";
 
 function getTileSprite(type) {
   const refObj = {
@@ -46,7 +47,7 @@ function MapTile(props) {
 }
 
 function MapRow(props) {
-  return props.tiles.map(tile => <MapTile tile={tile} />);
+  return props.tiles.map((tile, i) => <MapTile key={`Individual tile${i}`} tile={tile} />);
 }
 
 function Map(props) {
@@ -59,8 +60,8 @@ function Map(props) {
           margin: "20px auto"
         }}
       >
-        {props.tiles.map(row => (
-          <MapRow tiles={row} />
+        {props.tiles.map((row,i) => (
+          <MapRow key={`rowtile ${i}`} tiles={row} />
         ))}
       </div>
       <div className="inventory">
@@ -98,7 +99,9 @@ function Map(props) {
 
 function mapStateToProps(state) {
   return {
-    tiles: state.map.tiles
+    tiles: state.map.tiles,
+    player: state.player.positon,
+    enemy: state.player.position
   };
 }
 
