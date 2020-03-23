@@ -3,7 +3,7 @@ import World from "./features/world"
 
 function App() {
   return (
-    <div>
+    <div className='fit'>
     <World />
     </div>
   );

@@ -128,12 +128,14 @@ function handlePickup(tiles, y, x, nextTile) {
       return row;
     } else return row;
   });
-  store.dispatch({
-    type: "ADD_TILES",
-    payload: {
-      tiles: pickItems
-    }
-  });
+  store.dispatch(
+    {
+      type: "ADD_TILES",
+      payload: {
+        tiles: pickItems
+      }
+    },
+  );
 }
 
 function handlePoison(tiles, y, x, nextTile) {
@@ -196,6 +198,16 @@ function observeBlock(oldPos, newPos) {
   return nextTile > 10;
 }
 
+function getHint(newPos) {
+  if(newPos[0] <= 80 && newPos[1] <= 160) {   return "Be vigilant of enemies!! Dont let them catch you"
+  } else if (newPos[1] ===0) {
+    return "Collected items may allow you to traverse impassible objects"
+  } else {
+    return "Walk over items to collect them. tread carefully!! Certain items/obstacles are not to be trifled with"
+  }
+
+}
+
 function directionMove(direction, newPos) {
   const walkIndex = getWalkIndex();
   store.dispatch({
@@ -204,7 +216,8 @@ function directionMove(direction, newPos) {
       position: newPos,
       direction,
       walkIndex,
-      spriteLocation: getSpriteLocation(direction, walkIndex)
+      spriteLocation: getSpriteLocation(direction, walkIndex),
+      gameRules: getHint(newPos)
     }
   });
 }
@@ -241,7 +254,7 @@ function attemptMove(direction) {
   const newPos = getNewPosition(oldPos, direction);
   checkEnemyContact(newPos, oldPos)
   if (observedBoundaries(oldPos, newPos) && observeBlock(oldPos, newPos)) {
-    directionMove(direction, newPos);
+    directionMove(direction, newPos, oldPos);
   }
 }
 

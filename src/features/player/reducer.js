@@ -2,7 +2,8 @@ const initialState = {
   position: [0, 0],
   spriteLocation: "0px 40px",
   direction: "EAST",
-  walkIndex: 0
+  walkIndex: 0,
+  gameRules: "Use the arrow keys to maneuver around the board"
 };
 
 const playerReducer = (state = initialState, action) => {

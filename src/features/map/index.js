@@ -55,8 +55,8 @@ function Map(props) {
     <>
       <div
         style={{
-          height: "600px",
-          width: "800px",
+          height: "100%",
+          width: "100%",
           margin: "20px auto"
         }}
       >
@@ -64,6 +64,7 @@ function Map(props) {
           <MapRow key={`rowtile ${i}`} tiles={row} />
         ))}
       </div>
+      <div className="explain"><p className='typewriter'>{props.gameRules}</p></div>
       <div className="inventory">
         Inventory
         <img
@@ -101,6 +102,7 @@ function mapStateToProps(state) {
   return {
     tiles: state.map.tiles,
     player: state.player.positon,
+    gameRules: state.player.gameRules,
     enemy: state.player.position
   };
 }
